@@ -86,6 +86,7 @@ import DesignerLeaveTracker from "../Admin/Employee/DESIGNER/DesignerLeaveTracke
 import DesignerViewLeave from "../Admin/Employee/DESIGNER/DesignerViewLeave";
 import WriterLeaveTracker from "../Admin/Employee/WRITER/WriterLeaveTracker";
 import WriterViewLeave from "../Admin/Employee/WRITER/WriterViewLeave";
+import SeacrhView from "../Admin/Employee/ReUseFunc.js/SearchView";
 
 
 
@@ -97,7 +98,6 @@ export default function Router() {
       <Route path="/Logout" element={<Logout />} />
       <Route path="/Admin" element={<AdminLogin />} />
       <Route path="/Employee" element={<EmployeeLogin />} />
-        
         
       {/* ...............................Super Admin Routers ......................*/}
       <Route path="/v1/" element={<SuperAdminHome />}>
@@ -111,6 +111,7 @@ export default function Router() {
       <Route path="ad/dashboard" element={<AdminDashboard />} />
       {/*........................ Admin employee Routers............................. */}
       <Route path="em/dashboard" element={<EmployeeDashboard />} />
+        <Route  path="/seacrh/view" element={<SeacrhView />}  />
 
       {/*........................ Admin PROJECT Routers............................. */}
       <Route path="/v2/das/" element={<ProjectsDashboard />}>

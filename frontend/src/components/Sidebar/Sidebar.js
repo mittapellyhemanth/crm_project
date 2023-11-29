@@ -44,7 +44,7 @@ export default function Sidebar({ children }) {
         </div>
       </div>
 
-      <div className="side-content">
+      <div className="side-content ">
         <Outlet />
       </div>
     </div>

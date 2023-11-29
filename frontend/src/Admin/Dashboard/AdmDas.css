@@ -1,6 +1,7 @@
 .card-container{
     width: auto;
     height: 90vh;
+    border: 1px solid red;
    margin: auto;
    display: flex;
    flex-wrap: wrap;
@@ -18,9 +19,8 @@
 /* .card-top-container{
     width: 100%;
     height: auto;
-   
-    background-color: red;
-    border: 5px solid black;
+    border: 5px solid red;
+    margin-bottom: 50px;
 } */
 .cards{
 

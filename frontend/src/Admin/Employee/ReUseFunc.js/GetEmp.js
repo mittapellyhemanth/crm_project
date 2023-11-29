@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import "../../../Styles/EmpyCards.css";
 import "../../../Styles/OneView.css";
 
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 export default function GetEmply({ url, NavigateUrl, type }) {
   const [data, setData] = useState([]);
@@ -58,6 +58,9 @@ export default function GetEmply({ url, NavigateUrl, type }) {
           setError("");
 
           setData(result.data.data);
+          // const searchTerm = "sea"; // Replace this with your actual search term
+
+          // navigate(`/v2/em/empy?name=${searchTerm}`);
           setBack(true);
         }
       })
@@ -103,7 +106,9 @@ export default function GetEmply({ url, NavigateUrl, type }) {
   }
 
   const handleGoBack = () => {
-    window.history.back();
+    // window.history.back();
+    // const pathname = "/v2/em/empy"
+    window.location.reload()
   };
 
   return (
@@ -130,9 +135,7 @@ export default function GetEmply({ url, NavigateUrl, type }) {
           <div>
 
         <div className="card-top">
-         
-
-          {currentItems.length > 0 ? (
+         {currentItems.length > 0 ? (
             currentItems.map((user) => {
               return (
                 <>
@@ -162,8 +165,8 @@ export default function GetEmply({ url, NavigateUrl, type }) {
               );
             })
           ) : (
-            <div className="super-container">
-              <div className="super">
+            <div className="search-container">
+              <div className="super-search">
                 <Card
                   style={{ width: "18rem", textAlign: "center" }}
                   key={data.Name}
@@ -183,15 +186,16 @@ export default function GetEmply({ url, NavigateUrl, type }) {
                   </Card.Body>
                 </Card>
               </div>
+             
+             <button className="button-back" onClick={handleGoBack}>
+            CANCEL
+          </button>
             </div>
           )}
         </div>
           </div>
-        {back ? (
-          <button className="button-back" onClick={handleGoBack}>
-            CANCEL
-          </button>
-        ) : (
+        {
+          
           <div className="pagination">
             <button
               className="prevbtn"
@@ -221,7 +225,7 @@ export default function GetEmply({ url, NavigateUrl, type }) {
             </button>
             {/* {back &&  <button onClick={handleGoBack}>CANCEL</button>} */}
           </div>
-        )}
+        }
       </div>
     </>
   );

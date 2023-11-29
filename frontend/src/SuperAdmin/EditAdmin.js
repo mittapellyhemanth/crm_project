@@ -12,8 +12,8 @@ export default function EditAdmin() {
     encryptedProjectData,
     "SuperAdminView"
     ).toString(CryptoJS.enc.Utf8);
+    const data = JSON.parse(decryptedProjectDatay);
     const id = localStorage.getItem("empyId");
-  const data = JSON.parse(decryptedProjectDatay);
   const [err, setError ] = useState("");
   const [sucess,setSucess] = useState("")
   

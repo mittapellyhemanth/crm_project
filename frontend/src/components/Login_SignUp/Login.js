@@ -26,7 +26,7 @@ useEffect(()=>{
   ];
 
   const LoginCheck = async (formData,serverURL)=>{
-  
+  localStorage.removeItem('breakEnd')
     try {
         const res = await axios.post(serverURL, formData); // fetching the post url and form data
      

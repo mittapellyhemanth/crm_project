@@ -93,6 +93,9 @@ export default function SalesProjectSubmit() {
 
   return (
     <>
+     <div className="form-addpro">
+    {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
+
       {sucess ? <div className="sucess">{sucess}</div> : ""}
 
       <ProjectSendForm
@@ -104,6 +107,7 @@ export default function SalesProjectSubmit() {
         formData={formData}
         setFormData={setFormData}
       />
+      </div>
     </>
   );
 }

@@ -98,7 +98,7 @@ export default function Projects(click) {
   }
 
   const handleGoBack = () => {
-    window.history.back();
+    window.location.reload()
   };
 
   return (
@@ -154,38 +154,43 @@ export default function Projects(click) {
               );
             })
           ) : (
-            <Card
-              style={{ width: "18rem", textAlign: "center" }}
-              key="card"
-              className="person-card"
-            >
-              {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-              <Card.Body key="body">
-                <Card.Title
-                  onClick={() => {
-                    handleClick(
-                      data.projectName,
-                      data.empyDesignation,
-                      data.employID
-                    );
-                  }}
-                  key={data.projectName}
-                >
-                  {data.projectName}
-                </Card.Title>
+            <div className="search-container">
+            <div className="super-search">
+              <Card
+                style={{ width: "18rem", textAlign: "center" }}
+                key={data.Name}
+                className="person-card"
+              >
+                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                <Card.Body key="body">
+                      <Card.Title
+                        onClick={() => {
+                          handleClick(
+                            data.projectName,
+                            data.empyDesignation,
+                            data.employID
+                          );
+                        }}
+                        key={data.projectName}
+                      >
+                        {data.projectName}
+                      </Card.Title>
 
-                {/* <button className='person-card-view'   key={user.phoneNumber}>View</button> */}
-              </Card.Body>
-            </Card>
+                      {/* <button className='person-card-view'   key={user.phoneNumber}>View</button> */}
+                    </Card.Body>
+              </Card>
+            </div>
+            <button className="button-back" onClick={handleGoBack}>
+          CANCEL
+        </button>
+          </div>
           )}
         </div>
 </div>
        
-        {back ? (
-          <button className="button-back" onClick={handleGoBack}>
-            CANCEL
-          </button>
-        ) : (
+        {
+         
+       
           <div className="pagination">
             <button
               className="prevbtn"
@@ -215,7 +220,7 @@ export default function Projects(click) {
             </button>
             {/* {back &&  <button onClick={handleGoBack}>CANCEL</button>} */}
           </div>
-        )}
+        }
       </div>
     </>
   );

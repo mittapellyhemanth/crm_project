@@ -86,7 +86,7 @@ export default function DesignerProjectSubmit() {
     <>
       <div className="form-addpro">
         <div className="form-addpro-box">
-          {sucess ? <div className="sucess">{sucess}</div> : ""}
+        {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
 
           {err ? <div className="err">{err}</div> : ""}
 

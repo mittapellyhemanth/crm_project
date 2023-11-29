@@ -110,16 +110,22 @@ export default function SeoProjectSubmit() {
 
   return (
     <>
-      {sucess ? <div className="sucess">{sucess}</div> : ""}
-      <ProjectSendForm
-        Method="POST"
-        inputs={inputs}
-        onSubmit={onSubmit}
-        btnText="submit"
-        urlData={URL}
-        formData={formData}
-        setFormData={setFormData}
-      />
+   <div className="form-addpro">
+    {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
+
+
+<ProjectSendForm
+  Method="POST"
+  inputs={inputs}
+  onSubmit={onSubmit}
+  btnText="submit"
+  urlData={URL}
+  formData={formData}
+  setFormData={setFormData}
+/>
+</div>
+   
+     
     </>
   );
 }

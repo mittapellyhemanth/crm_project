@@ -1,7 +1,7 @@
-import { useContext, useState } from "react";
+import {  useState } from "react";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+
 
 import ReUseForm from "../../../Forms/ReUseForm";
 
@@ -48,7 +48,7 @@ export default function UseAddEmployee({ url }) {
       required: true,
     },
   ];
-  const navigate = useNavigate();
+ 
 
 
   const onSubmit = async ({ ...formData }) => {

@@ -40,7 +40,8 @@ export default function ClientDetails() {
   }
 
   const handleGoBack = () => {
-    window.history.back();
+    // window.history.back();
+    window.location.reload()
   };
 
   const navigate = useNavigate("");
@@ -122,35 +123,38 @@ export default function ClientDetails() {
             })
           ) : (
             
-            <Card
-              style={{ width: "18rem", textAlign: "center" }}
-              key="card"
-              className="person-card"
-            >
-              {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
-              <Card.Body key="body">
-                <Card.Title
-                  onClick={() => {
-                    handleClick(data._id);
-                  }}
-                  key={data.clientName}
-                >
-                  {data.clientName}
-                </Card.Title>
+            <div className="search-container">
+            <div className="super-search">
+              <Card
+                style={{ width: "18rem", textAlign: "center" }}
+                key={data.Name}
+                className="person-card"
+              >
+                {/* <Card.Img variant="top" src="holder.js/100px180" /> */}
+                <Card.Body key="body">
+                      <Card.Title
+                        onClick={() => {
+                          handleClick(data._id);
+                        }}
+                        key={data.clientName}
+                      >
+                        {data.clientName}
+                      </Card.Title>
 
-                {/* <button className='person-card-view'   key={user.phoneNumber}>View</button> */}
-              </Card.Body>
-            </Card>
+                      {/* <button className='person-card-view'   key={user.phoneNumber}>View</button> */}
+                    </Card.Body>
+              </Card>
+            </div>
+            <button className="button-back" onClick={handleGoBack}>
+          CANCEL
+        </button>
+          </div>
             
           )}
           
         </div>
           </div>
-        {back ? (
-          <button className="button-back" onClick={handleGoBack}>
-            CANCEL
-          </button>
-        ) : (
+        {
           <div className="pagination">
             <button
               className="prevbtn"
@@ -180,7 +184,7 @@ export default function ClientDetails() {
             </button>
             {/* {back &&  <button className="button-back" onClick={handleGoBack}>CANCEL</button>} */}
           </div>
-        )}
+        }
       </div>
     </>
   );

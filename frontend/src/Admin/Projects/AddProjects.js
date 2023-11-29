@@ -4,7 +4,7 @@ import "./Project.css";
 
 import UserName from "../../Functions/UserName";
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+
 
 
 export default function AddProjects() {
@@ -71,7 +71,7 @@ export default function AddProjects() {
     setError('')
   }
   
-const navigate = useNavigate()
+
 
   const onSubmit = async( formData ) => {
    
@@ -86,9 +86,12 @@ const navigate = useNavigate()
         .then((res) => {
           
           if (res.data.error) {
-           return setError(res.data.error);
+            setSucess("")
+            setError(res.data.error);
           }
-          navigate('/v2/das/proj')
+          setError("")
+          setSucess("Project Added Sucessfully")
+          // navigate('/v2/das/proj')
           
         });
     } catch (error) {
@@ -101,7 +104,7 @@ const navigate = useNavigate()
 <div className="form-addpro">
 {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
         {err && <div className="sucess-admin slide-in error">{err}<span onClick={remove} className="remove">X</span></div>}
-  <div className="form-addpro-box">
+  <div className="">
     <div>
 
       

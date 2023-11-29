@@ -111,7 +111,8 @@ export default function WriterProjectSubmit() {
 
   return (
     <>
-      {sucess ? <div className="sucess">{sucess}</div> : ""}
+ <div className="form-addpro">
+ {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
       <ProjectSendForm
         Method="POST"
         inputs={inputs}
@@ -121,6 +122,7 @@ export default function WriterProjectSubmit() {
         formData={formData}
         setFormData={setFormData}
       />
+      </div>
     </>
   );
 }
