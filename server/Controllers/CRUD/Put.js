@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 
 
 const Put = async (req, res,UserModel)=>{
-    // console.log("update")
+    
     try {
         const AdminId = req.params.id; // would look into param for data
         let updatedData = req.body;
@@ -45,9 +45,7 @@ const Put = async (req, res,UserModel)=>{
               })
             }
 }
-        // })
      
-        // console.log(updatedData.password,'pass');
 
         const updateStatus = await UserModel.findByIdAndUpdate(AdminId, updatedData, { new: true });
         if (!updateStatus) {
@@ -56,10 +54,10 @@ const Put = async (req, res,UserModel)=>{
             })
         }
         res.status(200).json(updateStatus) // would return updated data
-        // console.log(updateStatus)
+        
     }
     catch (err) {
-        // console.log(err);
+        
         res.status(500).json({
             message: "internal server error"
         })

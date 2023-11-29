@@ -11,11 +11,11 @@ SuperAdminRouter.post('/Register',RegisterSuperAdmin.post)
 
 SuperAdminRouter.post("/login", async (req, res) => {
     const loginCred =req.body;
-    console.log(req);
+    
     User.findOne({ email: loginCred.email }).then(user => {
         LoginDetails( req,res,user);
     }).catch(err => {
-        // console.log(err);
+       
         res.status(500).json({
             message: "Internal server Error!!"
         })
