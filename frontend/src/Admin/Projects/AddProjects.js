@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import ReUseForm from "../../Forms/ReUseForm";
 import "./Project.css";
 
 import UserName from "../../Functions/UserName";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import DetailsContext from "../../Context/CreateContext";
+
 
 export default function AddProjects() {
   UserName();
-  const { err, setError } = useContext(DetailsContext);
+  const [err, setError] = useState("");
+  const [sucess, setSucess] = useState("");
   const input = [
     {
       type: "text",
@@ -66,7 +67,9 @@ export default function AddProjects() {
       required: true,
     },
   ];
- 
+  const remove = ()=>{
+    setError('')
+  }
   
 const navigate = useNavigate()
 
@@ -89,24 +92,40 @@ const navigate = useNavigate()
           
         });
     } catch (error) {
-      return setError('check details');
+      return setError('All Fields are mandatory');
     }
   };
   return (
     <>
 
 <div className="form-addpro">
+{sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
+        {err && <div className="sucess-admin slide-in error">{err}<span onClick={remove} className="remove">X</span></div>}
   <div className="form-addpro-box">
     <div>
 
-      {err && <h6 className="error">{err}</h6>}
+      
   </div>
-  <ReUseForm
-    Method="POST"
-    inputs={input}
-    onSubmit={onSubmit}
-    btnText="Submit"
-    />
+  {sucess ? (
+          <>
+            {" "}
+            <ReUseForm
+              Method="POST"
+              inputs={input}
+              onSubmit={onSubmit}
+              btnText="Submit"
+            />
+          </>
+        ) : (
+          <>
+            <ReUseForm
+              Method="POST"
+              inputs={input}
+              onSubmit={onSubmit}
+              btnText="Submit"
+            />
+          </>
+        )}
 </div>
   </div>
  

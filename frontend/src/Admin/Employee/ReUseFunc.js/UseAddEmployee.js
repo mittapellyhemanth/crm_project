@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import DetailsContext from "../../../Context/CreateContext";
+
 import ReUseForm from "../../../Forms/ReUseForm";
 
 import "./addEmpy.css";
 
 export default function UseAddEmployee({ url }) {
-  const { err, setError } = useContext(DetailsContext);
+  const [err, setError] = useState("");
+  const [sucess, setSucess] = useState("");
   const inputs = [
     {
       type: "text",
@@ -49,12 +50,6 @@ export default function UseAddEmployee({ url }) {
   ];
   const navigate = useNavigate();
 
-  // const [formData, setFormData] = useState({});
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
 
   const onSubmit = async ({ ...formData }) => {
     const key = localStorage.getItem("token");
@@ -65,9 +60,11 @@ export default function UseAddEmployee({ url }) {
     try {
       await axios.post(url.Url, { ...formData }, { headers }).then((res) => {
         if (res.data.error) {
+          setSucess("")
           setError(res.data.error);
         } else {
-          return navigate(url.Navlink);
+          setError("")
+          setSucess("Added Sucessfully")
         }
         
       });
@@ -75,12 +72,17 @@ export default function UseAddEmployee({ url }) {
       // console.log(error,'error');
     }
   };
+  const remove = ()=>{
+    setError('')
+  }
 
   return (
     <>
       <div className="form-addpro">
+      {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
+        {err && <div className="sucess-admin slide-in error">{err}<span onClick={remove} className="remove">X</span></div>}
         <div className="form-addpro-box">
-          <div>{err && <h6 className="error">{err}</h6>}</div>
+      
           <ReUseForm
             Method="POST"
             inputs={inputs}

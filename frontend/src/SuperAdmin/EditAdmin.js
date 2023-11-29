@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import ReUseForm from "../Forms/ReUseForm";
 import axios from "axios";
-import DetailsContext from "../Context/CreateContext";
 import "../Styles/SuperHome.css";
-import { useNavigate } from "react-router-dom";
+
 import CryptoJS from "crypto-js";
+
 export default function EditAdmin() {
   // const getOneData = localStorage.getItem("empyId")
   const encryptedProjectData = localStorage.getItem("adminView");
@@ -65,7 +65,7 @@ export default function EditAdmin() {
     
     },
   ];
-  const navigate = useNavigate();
+  
   const onSubmit = async (formData) => {
   
     const key = localStorage.getItem("token");

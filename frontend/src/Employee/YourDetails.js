@@ -61,7 +61,7 @@ const getDetails = async(url,token)=>{
      
   <div className="form-addpro">
          
-        <Card className="your-card-admin">
+        <Card className="emply-card">
           <Card.Body className="card-body">
             <Card.Title className="your-title">{getOneData.designation}</Card.Title>
           </Card.Body>

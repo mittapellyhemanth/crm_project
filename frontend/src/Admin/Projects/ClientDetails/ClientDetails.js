@@ -121,6 +121,7 @@ export default function ClientDetails() {
               );
             })
           ) : (
+            
             <Card
               style={{ width: "18rem", textAlign: "center" }}
               key="card"
@@ -140,7 +141,9 @@ export default function ClientDetails() {
                 {/* <button className='person-card-view'   key={user.phoneNumber}>View</button> */}
               </Card.Body>
             </Card>
+            
           )}
+          
         </div>
           </div>
         {back ? (
@@ -175,7 +178,7 @@ export default function ClientDetails() {
             >
               NEXT
             </button>
-            {/* {back &&  <button onClick={handleGoBack}>CANCEL</button>} */}
+            {/* {back &&  <button className="button-back" onClick={handleGoBack}>CANCEL</button>} */}
           </div>
         )}
       </div>
