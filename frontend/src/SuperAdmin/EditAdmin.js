@@ -1,38 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import ReUseForm from "../Forms/ReUseForm";
 import axios from "axios";
 import DetailsContext from "../Context/CreateContext";
 import "../Styles/SuperHome.css";
 import { useNavigate } from "react-router-dom";
-
+import CryptoJS from "crypto-js";
 export default function EditAdmin() {
   // const getOneData = localStorage.getItem("empyId")
- 
-  const { err, setError } = useContext(DetailsContext);
-  const name = localStorage.getItem("name");
- 
-  const email = localStorage.getItem("email");
-  const phoneNumber = localStorage.getItem("phoneNumber");
-  const id = localStorage.getItem("empyId");
+  const encryptedProjectData = localStorage.getItem("adminView");
+  const decryptedProjectDatay = CryptoJS.AES.decrypt(
+    encryptedProjectData,
+    "SuperAdminView"
+    ).toString(CryptoJS.enc.Utf8);
+    const id = localStorage.getItem("empyId");
+  const data = JSON.parse(decryptedProjectDatay);
+  const [err, setError ] = useState("");
+  const [sucess,setSucess] = useState("")
+  
 
   const input = [
     {
       type: "text",
-      placeholder: name,
+      placeholder: data.Name,
       name: "Name",
 
       required: false,
     },
-    { type: "date", placeholder:"START DATE", name: "StartDate", required: false },
+    { type: "date", placeholder:data.StartDate, name: "StartDate", required: false },
     {
       type: "number",
-      placeholder: phoneNumber,
+      placeholder: data.phoneNumber,
       name: "phoneNumber",
       required: false,
     },
     {
       type: "email",
-      placeholder: email,
+      placeholder: data.email,
       name: "email",
       required: false,
     },
@@ -44,20 +47,20 @@ export default function EditAdmin() {
     },
     {
       type: "text",
-      placeholder: "COMPANY LOCATION",
+      placeholder:data.CompanyName,
       name: "CompanyLocation",
     
     },
 
     {
       type: "text",
-      placeholder: "INDUSTRY",
+      placeholder: data.Industry,
       name: "Industry",
     
     },
     {
       type: "text",
-      placeholder: "WEBSITE",
+      placeholder: data.Website,
       name: "Website",
     
     },
@@ -75,27 +78,31 @@ export default function EditAdmin() {
         .then((res) => {
         
           if (res.data.error) {
-            return setError(res.data.error);
+            setSucess("")
+             setError(res.data.error);
+          }else{
+           
+            // navigate("/v1/Admins");
+            // console.log(res);
+            setError("")
+            setSucess('Updated Sucessfully')
           }
-          localStorage.removeItem("name");
-          localStorage.removeItem("address");
-          localStorage.removeItem("email");
-          localStorage.removeItem("phoneNumber");
-          localStorage.removeItem("empyId");
-          navigate("/v1/Admins");
-          // console.log(res);
+         
         });
     } catch (error) {
       // console.log(error,'error');
     }
   };
-
+  const remove = ()=>{
+    setError('')
+  }
   return (
     <>
        <div className="form-addpro">
+       {err && <div className="sucess-admin slide-in error">{err}<span onClick={remove} className="remove">X</span></div>}
+          {sucess && <div className="sucess-admin slide-in sucess-admin">{sucess}</div>}
         <div className="form-addpro-box">
-          <div>{err && <h6 className="error">{err}</h6>}</div>
-
+         
           <ReUseForm
             Method="POST"
             inputs={input}

@@ -5,7 +5,7 @@ import axios from "axios";
 // import Admins from "./Admins";
 // import SuperAdminHome from "./SuperHome";
 import {  useNavigate } from "react-router-dom";
-
+import CryptoJS from "crypto-js";
 import './AdminView.css'
 // import DetailsContext from "../Context/CreateContext";
 
@@ -29,11 +29,12 @@ export default function AdminView(){
         // console.log(res.data.data,'got');
             
            setGetOneData(res.data.data);
-      
-           localStorage.setItem("name",res.data.data.Name);
-           localStorage.setItem("address",res.data.data.address);
-           localStorage.setItem("email",res.data.data.email);
-           localStorage.setItem("phoneNumber",res.data.data.phoneNumber);
+           setGetOneData(res.data.data);
+           const encryptData = CryptoJS.AES.encrypt(
+            JSON.stringify(res.data.data),
+            "SuperAdminView"
+          ).toString();
+          localStorage.setItem("adminView", encryptData);
 
       }
   })
