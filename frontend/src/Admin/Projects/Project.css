@@ -1,0 +1,195 @@
+.item-1{
+   
+  grid-area: header;
+
+}
+.item-2 {
+  grid-area: menu;
+
+}
+
+.item-3 {
+  grid-area: right;
+}
+
+.grid-container {
+
+  display: grid;
+  grid-template-areas:
+    "header header header header header "
+    "right right menu menu menu menu";
+    
+  gap: 10px;
+}
+.card-top{
+  width:fit-content ;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+justify-content: center;
+ margin-top: 70px;
+
+}
+.form-addpro{
+  width: 80vw;
+  height: 103.6vh;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+ 
+  background-image: url('../../image/backimg.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative; 
+}
+.formControl{
+ 
+  margin: 10px;
+}
+.formPlaceHolder{
+ text-align: center;
+}
+.form-addpro-box{
+  text-align: center;
+  height: fit-content;
+  width: fit-content;
+  border: 2px solid black;
+  padding: 50px;
+
+  background-color: rgba(226, 222, 111, 0.132);
+  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+
+
+  
+}
+.input-text>input{
+  border: 1px solid rgba(108, 106, 106, 0.237);
+ text-align: center;
+ color: black;
+ font-family: Outfit;
+font-weight: 400;
+
+}
+input::placeholder {
+  text-align: center;
+  color: rgba(84, 78, 78, 0.815) !important;
+  font-family: Outfit;
+ font-weight: 100;
+}
+.project-box{
+  width: 500px;
+  height: 450px;
+  margin: auto;
+  background-color: wheat;
+  display: block;
+  flex-wrap: wrap;
+  align-items: center;
+
+}
+.project-view{
+  width:500px;
+  height:500px;
+ 
+   margin: auto;
+   background-color: white;
+   margin-top: 50px;
+   display: flex;
+   flex-wrap: wrap;
+   
+}
+.project-view>h2{
+  width: 350px;
+ text-align: center;
+margin: auto;
+padding-bottom: 25px;
+}
+.content-box{
+  width: 300px;
+ height: fit-content;
+
+   display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+ 
+}
+.content-box>label{
+  margin-right: 10px;
+
+}
+.content-box >strong{
+  margin-right: 15px;
+}
+.tabel-body,.tabel-heading{
+  color: white;
+
+}
+ 
+.tabel-heading>tr>th{
+  width: 180px;
+  height: fit-content;
+  border: 1px solid #19191b;
+ word-wrap: break-word;
+ overflow: hidden;
+}
+
+.tabel-body>tr>td{
+  width: 180px;
+  height: fit-content;
+background-color: white;
+  color: black;
+  word-wrap: break-word;
+
+}
+table{
+  border-collapse:separate;
+  border-spacing: 10px 10px ;
+}
+th, td {
+  background-color: #19191b;
+  border: 1px solid black;
+  padding: 8px;
+
+
+}
+
+.tabel-view{
+ cursor: pointer;
+ word-wrap: break-word;
+  background-color: rgb(237, 198, 127) !important;
+}
+.Approved{
+  background-color:rgb(124, 227, 124) !important;
+}
+.Rejected{
+  background-color:rgb(240, 90, 90)!important;
+}
+.tabel-view:hover{
+  color: white;
+  background-color:black !important;
+}
+.pagination{
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+align-items: center;
+}
+.prevbtn,.Nextbtn{
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: white;
+  background-color: #19191b;
+}
+
+.numbtn{
+  margin-top: 15px;
+  margin-left: 3px;
+  color: black;
+  background-color:white;
+}

@@ -1,0 +1,96 @@
+.login-parent-cont{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.Login-container{
+    max-width:400px;
+    
+    
+    margin: auto;
+    text-align: center;
+    background-color:white;
+
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 5px;
+   
+  font-style: normal;
+}
+.Login-container:hover{
+    max-width:410px;
+   
+}
+.Login{
+    
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.login-text{
+    font-weight: 700;
+    font-size:18px;
+    color:#19191b;
+    text-transform: uppercase;
+}
+.title{
+    text-transform: uppercase;
+    color:white;
+    padding-top: 15px;
+    font-weight: 700;
+    font-style: normal;
+}
+.placeholder-text{
+    text-align: center !important;
+}
+.button{
+    text-align: center ;
+    background-color: rgb(205, 218, 185);
+    padding:1px 10px;
+    border-radius: 20px !important;
+    margin-top: 10px;
+
+}
+.input-group>input{
+
+    margin: auto;
+    text-align: center;
+}
+.password-input:hover{
+    border: 3px solid #86b7fe;
+}
+.password-input:focus{
+    
+    border: 3px solid #86b7fe;
+}
+.password-input.active{
+    border: 3px solid #86b7fe;
+}
+
+.error{
+    color: red;
+    font-size: 1rem;
+    padding: 15px;
+    font-weight: 500;
+}
+.err{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(253, 251, 251);
+    color: red;
+    font-size: 1rem;
+    font-weight: 500;
+   padding: 5px;
+    text-align: center;
+  
+    margin: auto;
+
+}
+@media only screen and (max-width: 410px) {
+    .Login-container{
+        margin: 10px;
+    }
+  }

@@ -1,0 +1,66 @@
+.grid-container{
+    width: 100vw;
+    height: 100vh;
+   
+}
+.grid-child-container{
+    width: 100vw;
+    height: 100vh;
+
+}
+.sucess-admin{
+
+    font-size: 1.2rem;
+   color: green;
+   border: 1px solid green;
+   margin-bottom: 20px;
+   padding: 3px;
+box-shadow: 10px 10px 1px 3px 2px green;
+text-transform: uppercase;
+}
+.error{
+    width: fit-content !important;
+    height: fit-content;
+    padding: 10px 15px;
+    margin-bottom: 25px;
+    border-radius: 15px ;
+    color:red;
+    border: 1px solid red;
+    font-size: 1rem;
+  background-color: white;
+  text-transform: uppercase;
+}
+.remove{
+    width: fit-content;
+    height: fit-content;
+    font-size: 1rem;
+    border: 1px solid red;
+ float: top;
+    color: red;
+    margin-left: 10px
+}
+.remove:hover{
+    cursor: pointer;
+}
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    80% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+  }
+@media only screen and (max-width:450px) {
+    .grid-child-container{
+        width: 100vw;
+        height: 100vh;
+     
+    
+    }
+}

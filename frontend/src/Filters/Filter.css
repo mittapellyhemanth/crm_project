@@ -1,0 +1,66 @@
+.form {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.submit-search {
+  margin-left: 15px;
+  background-color: orange;
+  padding: 5px;
+}
+.filterPlaceHolder {
+  width: 150px;
+  height: 40px;
+  padding: 5px;
+  text-align: center;
+  margin-left: 10px;
+}
+.filters {
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 1177px) {
+  .filterPlaceHolder {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  .filters {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 855px) {
+  .form {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  .filterPlaceHolder {
+    width: 85px;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  .filters {
+    margin-top: 50px;
+  }
+}
+@media only screen and (max-width: 690) {
+  .filterPlaceHolder {
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  .filters {
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,120 @@
+.navbar{
+    background-color: #FD8F35 !important;
+   
+    height: 75px;
+    
+}
+
+.nav-title{
+    color:#191B1B;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: normal;
+}
+.link{
+   
+    background-color: #191B1B;
+    margin: 10px;
+     padding: 10px;
+    
+        color:white;
+        text-decoration: none;
+        font-size: 15px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        letter-spacing: normal;
+        line-height: 20px;
+        text-decoration: none ;
+        text-align: center;
+        text-indent: 0px;
+        text-transform: none;
+        vertical-align: baseline;
+        white-space: normal;
+        word-spacing: 0px;
+        box-sizing: border-box;
+}
+.link:hover{
+    
+  
+  
+    text-align: center;
+    background-color:white;
+    color:black ;
+}
+.logout,.Name{
+    width:fit-content ;
+    height:fit-content;
+    margin: 2px;
+     padding: 10px;
+  color: white;
+    background-color: #191B1B;
+        text-decoration: none;
+        font-size: 18px;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 500;
+        letter-spacing: normal;
+        line-height: 20px;
+        text-decoration: none ;
+        text-align: center;
+        text-indent: 0px;
+        text-transform: none;
+        vertical-align: baseline;
+        white-space: normal;
+        word-spacing: 0px;
+        box-sizing: border-box;
+        border: 1px solid lightgray;
+        /* box-shadow: 0.5px 0.5px 5px 0.5px lightgray; */
+}
+.Name{
+    text-transform: uppercase;
+}
+.logout:hover{
+    width: fit-content;
+    height:fit-content;
+    border: 2px solid white;
+color:white ;
+background-color: black;
+/* box-shadow: 1px 1px 20px 5px #f7070721; */
+}
+
+.designation{
+   width: fit-content;
+   height: fit-content;
+  border: 2px solid white; 
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-family: Outfit;
+  word-spacing: 2px;
+  text-transform: uppercase;
+  /* box-shadow: 15px 15px 20px 5px #f7070721; */
+}
+
+
+@media only screen and (max-width:572px) {
+    .link{
+        width:100px;
+        height: auto;
+       
+        margin: 10px;
+    }
+   
+}
+@media only screen and (max-width:250px) {
+    .navbar{
+        background-color: #FD8F35 !important;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+}

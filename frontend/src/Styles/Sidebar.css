@@ -1,0 +1,106 @@
+.side-container {
+
+  display: grid;
+grid-template-areas:
+   "sider  side-content side-content side-content"
+   "sider  side-content side-content side-content"
+   "sider  side-content side-content side-content";
+ 
+}
+.sider {
+ 
+ width: 20vw;
+ height:100vh;
+
+ grid-area:sider;
+ background-color: white;
+  
+
+ /* border: 3px solid rgb(177, 213, 213); */
+
+
+}
+.side-content {
+ grid-area: side-content;
+ width: 80vw;
+ height:100vh;
+display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+
+
+gap: 10px;
+
+}
+.link-text{
+  width: auto;
+  height: 45px;
+  text-decoration: none;
+}
+.nav-div{
+  width:20vw;
+  height: fit-content;
+
+
+}
+.link-text  {
+  width: auto;
+  height: 45px;
+
+  
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+  
+
+background-color:white;
+/* margin-bottom: 10px; */
+ color:#19191b;
+ font-size: 18px;
+ font-family: Outfit;
+}
+
+
+.link-text:hover {
+ padding:10px 0px ;
+ background-color: #19191b;
+ color: white;
+ }
+
+.link-text.active{
+  background-color: #19191b;
+  color: white;
+} 
+
+.personName{
+
+ font-family: Outfit;
+ font-size: 1.3rem;
+ font-weight: 400;
+  color: black;
+}
+
+
+@media only screen and (max-width: 360px) {
+ .side-content {
+   grid-area: side-content;
+   max-width: 200px;
+   height: fit-content;
+   background-color: white;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: 50px;
+   padding: 15px;
+   gap: 15px;
+ }
+}
+@media only screen and (max-width: 250px) {
+   .side-content {
+    
+     max-width: 130px;
+ 
+   }
+   
+ }

@@ -1,0 +1,9 @@
+.view{
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+   
+}

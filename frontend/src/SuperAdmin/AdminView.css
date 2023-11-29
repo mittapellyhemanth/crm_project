@@ -1,0 +1,54 @@
+.card-btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 70px;
+}
+.name{
+  margin-left: 10px;
+}
+.cancel-btn {
+  display: block;
+  
+}
+.bg-wh{
+  width: 100px;
+  border-radius: 0px !important;
+
+}
+.bg-red {
+  width: 100px;
+  border-radius: 0px !important;
+  background-color: rgb(241, 71, 71);
+  color: rgb(40, 38, 38);
+  font-weight: 600;
+}
+.bg-blue {
+  width: 100px;
+  border-radius: 0px !important;
+  background-color: rgb(129, 137, 235);
+  color: rgb(40, 38, 38);
+  font-weight: 600;
+}
+.your-card-admin{
+  padding: 25px;
+ text-align: justify;
+}
+.bg-img {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../image/backimg.webp");
+  display: flex;
+  flex-wrap: wrap;
+/* flex-start: start; */
+  justify-content: center;
+}
+.user-text {
+  text-transform: uppercase;
+}
+
+.btn{
+  border-radius: 0px !important;
+}

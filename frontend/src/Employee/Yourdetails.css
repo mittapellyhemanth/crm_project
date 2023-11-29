@@ -1,0 +1,41 @@
+.view{
+    width: fit-content;
+    height: 75vh;
+    background-color:#19191b;
+    border: 1px solid #19191b;
+    
+   margin-top: 50px;
+  
+}
+.your-card{
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    font-size: 18px;
+  
+   padding: 60px;
+  
+   text-align: justify;
+  
+}
+ /* .details-box{
+     width: fit-content;
+    height: fit-content; 
+     border: 1px solid red; 
+     margin: auto; 
+}  */
+.card-body{
+    margin: auto;
+}
+.your-title{
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: black;
+}
+.unerLine{
+
+    /* border-bottom: 2px solid #19191b; */
+    line-height:2;
+    margin-bottom: 10px;
+}

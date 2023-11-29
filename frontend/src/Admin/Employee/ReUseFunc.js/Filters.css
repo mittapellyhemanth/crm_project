@@ -1,0 +1,51 @@
+.form-filter{
+    width: 100%;
+    height: auto;
+  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top:20px ;
+    gap: 20px;
+}
+.form-filter>label{
+    color:white;
+   margin: 5px;
+   padding: 5px;
+}
+.heading-designer{
+    margin: auto;
+   background-color: black;
+   color: white; 
+}
+.search{
+  width: 500px;
+   height: fit-content;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.search>input{
+ width: 300px;
+ padding: 4px 55px;
+border: 1px solid black;
+}
+.btn-search{
+    padding: 4px 5px;
+    margin-left: 5px;
+    background-color: black;
+    color:white;
+}
+.button-back{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+   
+    text-align: center;
+}
+.error{
+   width: 100%;
+   height: fit-content;
+}
