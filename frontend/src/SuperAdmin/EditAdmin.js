@@ -23,7 +23,7 @@ export default function EditAdmin() {
       type: "text",
       placeholder: data.Name,
       name: "Name",
-
+      
       required: false,
     },
     { type: "date", placeholder:data.StartDate, name: "StartDate", required: false },
@@ -36,6 +36,7 @@ export default function EditAdmin() {
     {
       type: "email",
       placeholder: data.email,
+      
       name: "email",
       required: false,
     },

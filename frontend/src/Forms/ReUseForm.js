@@ -63,6 +63,7 @@ const remove = ()=>{
                     name={input.name}
                     value={formData[input.name] || ""}
                     onChange={handleChange}
+                    
                     required={input.required}
                     
                   />
