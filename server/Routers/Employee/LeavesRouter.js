@@ -13,6 +13,7 @@ const LeavesPost = async(req,res,LeavesModel)=>{
     const LeaveData = new LeavesModel({
       EmployeeName:req.params.Name,
       employeeId:req.params.empyId,
+      addedAdminId:req.params.adminId,
       ReasonForAbsent,
       ChooseDate,
       NoOfDays,
@@ -59,7 +60,7 @@ const UpdateStatus = async(req,res,updateModel)=>{
 const getLeaves = async(req,res,getModel)=>{
     try {
     
-        const result =  await getModel.find()
+        const result =  await getModel.find({addedAdminId:req.params.adminId})
         if(result){
          res.status(200).json({
            data:result
@@ -104,7 +105,7 @@ const getOneLeave = async(req,res,getModel)=>{
 
 // ..........................................GET,POST,GETONE,update LEAVES OF SEO ..................................................................................
 const SeoLeavesPost = require('../../Schemas/Employee/LeaveSubmission/SeoLeaves')
-LeavesRouter.post("/seo/:empyId/:Name", async (req, res) => {
+LeavesRouter.post("/seo/:empyId/:Name/:adminId", async (req, res) => {
 
     await LeavesPost(req,res,SeoLeavesPost) 
 
@@ -112,7 +113,7 @@ LeavesRouter.post("/seo/:empyId/:Name", async (req, res) => {
 
 
 
-LeavesRouter.get("/seo/getleaves", async(req,res)=>{
+LeavesRouter.get("/seo/getleaves/:adminId", async(req,res)=>{
     await getLeaves(req,res,SeoLeavesPost) 
 })
 
@@ -126,10 +127,10 @@ LeavesRouter.put("/seo/status/:_id", async(req,res)=>{
 // ..........................................GET,POST,GETONE,UPDATE LEAVES OF WRITER ..................................................................................
 
 const WriterLeavesPost = require('../../Schemas/Employee/LeaveSubmission/WriterLeaves')
-LeavesRouter.post("/writer/:empyId/:Name", async (req, res) => {
+LeavesRouter.post("/writer/:empyId/:Name/:adminId", async (req, res) => {
   await LeavesPost(req,res,WriterLeavesPost) 
 });
-LeavesRouter.get("/writer/getleaves", async(req,res)=>{
+LeavesRouter.get("/writer/getleaves/:adminId", async(req,res)=>{
     await getLeaves(req,res,WriterLeavesPost) 
 })
 
@@ -145,11 +146,11 @@ LeavesRouter.put("/writer/status/:_id", async(req,res)=>{
 
 
 const DesignerLeavesPost = require('../../Schemas/Employee/LeaveSubmission/DesignerLeaves')
-LeavesRouter.post("/designer/:empyId/:Name", async (req, res) => {
+LeavesRouter.post("/designer/:empyId/:Name/:adminId", async (req, res) => {
   await LeavesPost(req,res,DesignerLeavesPost) 
 });
 
-LeavesRouter.get("/designer/getleaves", async(req,res)=>{
+LeavesRouter.get("/designer/getleaves/:adminId", async(req,res)=>{
     await getLeaves(req,res,DesignerLeavesPost) 
 })
 
@@ -165,10 +166,10 @@ LeavesRouter.put("/designer/status/:_id", async(req,res)=>{
 // ..........................................GET,POST,GETONE,UPDATE LEAVES OF SALES ..................................................................................
 const SalesLeavesPost = require('../../Schemas/Employee/LeaveSubmission/SalesLeaves');
 
-LeavesRouter.post("/sales/:empyId/:Name", async (req, res) => {
+LeavesRouter.post("/sales/:empyId/:Name/:adminId", async (req, res) => {
   await LeavesPost(req,res,SalesLeavesPost) 
 });
-LeavesRouter.get("/sales/getleaves", async(req,res)=>{
+LeavesRouter.get("/sales/getleaves/:adminId", async(req,res)=>{
     await getLeaves(req,res,SalesLeavesPost) 
 })
 LeavesRouter.get("/sales/getOneleave/:_id", async(req,res)=>{

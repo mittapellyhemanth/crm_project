@@ -31,6 +31,7 @@ useEffect(()=>{
         const res = await axios.post(serverURL, formData); // fetching the post url and form data
      
         localStorage.setItem("userName", res.data.user.Name);
+        localStorage.setItem("adminId", res.data.user.addedAdminId);
         localStorage.setItem("token", res.data.Token);
         localStorage.setItem("unique_id",res.data.user.unique_id)
       //  localStorage.setItem("personLogin", "SuperAdmin");

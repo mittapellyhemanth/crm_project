@@ -8,8 +8,9 @@ export default function SalesLeaveTracker() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const adminId = localStorage.getItem("unique_id")
         const result = await axios.get(
-          `${process.env.REACT_APP_PROXY_URL}/leave/sales/getleaves`
+          `${process.env.REACT_APP_PROXY_URL}/leave/sales/getleaves/${adminId}`
         );
         setData(result.data.data);
         // console.log(result.data.data);

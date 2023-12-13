@@ -60,6 +60,8 @@ export default function Application() {
     const emplyId = localStorage.getItem("unique_id")
     const type = localStorage.getItem("designation")
     const Name = localStorage.getItem("userName")
+    const adminId = localStorage.getItem("adminId")
+    
     // const headers = {
     //   Authorization: key,
     // };
@@ -77,20 +79,20 @@ export default function Application() {
 
     try {
       if(type === 'SEO'){
-        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/seo/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/seo/${emplyId}/${Name}/${adminId}`
         PostData(URL,formData)
       }
       if(type === 'SALES'){
-        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/sales/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/sales/${emplyId}/${Name}/${adminId}`
         PostData(URL,formData)
       }
       if(type === 'DESIGNER'){
-        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/designer/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/designer/${emplyId}/${Name}/${adminId}`
         PostData(URL,formData)
       
       }
       if(type === 'WRITER'){
-        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/writer/${emplyId}/${Name}`
+        const URL =`${process.env.REACT_APP_PROXY_URL}/leave/writer/${emplyId}/${Name}/${adminId}`
         PostData(URL,formData)
       
       }

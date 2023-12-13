@@ -8,8 +8,9 @@ export default function SeoLeaveTracker() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const adminId = localStorage.getItem("unique_id")
         const result = await axios.get(
-          `${process.env.REACT_APP_PROXY_URL}/leave/seo/getleaves`
+          `${process.env.REACT_APP_PROXY_URL}/leave/seo/getleaves/${adminId}`
         );
         setData(result.data.data);
        

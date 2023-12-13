@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 function LeaveSchema(AddModel) {
     const schema = new Schema({
+        addedAdminId:{type: String, required: true},
         EmployeeName:{type:String},
         employeeId:{type:String},
         ReasonForAbsent: { type: String},
